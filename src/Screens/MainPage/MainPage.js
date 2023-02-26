@@ -50,6 +50,35 @@ function MainPage() {
 
     }
 
+
+    const handleGetImage = (e) => {
+
+        e.preventDefault()
+
+        const items = e.clipboardData.items;
+
+        for (let i = 0; i < items.length; i++) {
+
+            if (items[i].type === 'image/png') {
+
+                const blob = items[i].getAsFile()
+
+                const readImage = new FileReader()
+
+                readImage.addEventListener('load', (e) => {
+                    setUploadedImage(e.target.result)
+                })
+
+                readImage.readAsDataURL(blob)
+
+
+            }
+
+        }
+
+
+    }
+
     return (
         <div className='flex w-full laptop:p-10 p-5 laptop:flex-row flex-col justify-evenly items-start'>
             {
@@ -115,30 +144,48 @@ function MainPage() {
 
             {/* Image Upload + Color Display.... */}
             <div className='laptop:ml-8 border-2 laptop:px-10 px-5 mt-5 laptop:mt-0 laptop:w-1/3 w-full shadow-md'>
-                {/* Image Upload */}
-                <label htmlFor='image-upload' className='cursor-pointer'>
-                    <div className='my-5 border p-2 shadow-md flex items-center'>
-                        <label
-                            htmlFor='image-upload'
-                            className='cursor-pointer bg-teal-600 rounded-md hover:bg-teal-700 px-4 py-1 text-white'
-                        >Upload</label>
-                        <p className='ml-3'>{UploadedImage === '' ? "Upload Image..." : "Uploaded Successfully..."}</p>
-                    </div>
-                </label>
+                {
+                    UploadedImage === '' ?
+                        <>
+                            {/* Image Upload */}
+                            <label htmlFor='image-upload' className='cursor-pointer'>
+                                <div className='my-5 border p-2 shadow-md flex items-center'>
+                                    <label
+                                        htmlFor='image-upload'
+                                        className='cursor-pointer bg-teal-600 rounded-md hover:bg-teal-700 px-4 py-1 text-white'
+                                    >Upload</label>
+                                    <p className='ml-3'>{UploadedImage === '' ? "Upload Image..." : "Uploaded Successfully..."}</p>
+                                </div>
+                            </label>
 
-                <form className='border-2 shadow-md px-2 py-2 rounded-md' onSubmit={handleForm} autoComplete='off'>
-                    <label className='font-bold'>Upload Image URL</label>
-                    <input
-                        type={'text'}
-                        className='border-2 rounded-md w-full mt-2 h-10 shadow-md pl-2 focus:border-teal-700 focus:outline-none'
-                        placeholder='Enter an Image URL'
-                        name='img_url'
-                    />
-                    <input
-                        type={'submit'}
-                        className='mt-3 border w-28 h-10 hover:bg-teal-700 hover:text-white rounded-lg cursor-pointer'
-                    />
-                </form>
+                            <form className='border-2 shadow-md px-2 py-2 rounded-md' onSubmit={handleForm} autoComplete='off'>
+                                <label className='font-bold'>Upload Image URL</label>
+                                <input
+                                    type={'text'}
+                                    className='border-2 rounded-md w-full mt-2 h-10 shadow-md pl-2 focus:border-teal-700 focus:outline-none'
+                                    placeholder='Enter an Image URL'
+                                    name='img_url'
+                                />
+                                <input
+                                    type={'submit'}
+                                    className='mt-3 border w-28 h-10 hover:bg-teal-700 hover:text-white rounded-lg cursor-pointer'
+                                />
+                            </form>
+
+                            <div
+                                className='mt-3 p-2 border-2 shadow-lg rounded-md'
+                            >
+                                <label className='font-bold'>Paste the Image</label>
+                                <input
+                                    contentEditable={true}
+                                    className='border-2 rounded-md w-full mt-2 h-10 shadow-md pl-2 focus:border-teal-700 focus:outline-none'
+                                    onPaste={handleGetImage}
+                                />
+                            </div>
+                        </>
+                        :
+                        <></>
+                }
 
                 {/* Image Color display */}
                 <div className='shadow-md my-10 px-2 py-5 border-2 rounded-md flex relative'>

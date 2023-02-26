@@ -18,7 +18,8 @@ function App() {
             <div>
               <li className='mb-2'>This Application Help you to get the <b>Color Hex Code</b> from an Image. It is an free web application which is made for Practice to help People.</li>
               <li>And You can upload any picture you want it will <b>100% secure</b> and the Images will not going to store anywhere, It will be in local Cache which will be clear after you refresh the page or Close the Browser.</li>
-              <li>You can Upload an <b>Image from local Machine</b> or Enter the <b>URL of the Image</b>...</li>
+              <li>You can Upload an <b>Image from local Machine</b> or from the <b>URL of the Image</b> OR you can <b>Paste the Screen Shot or Images</b>...</li>
+              <li><b>Key Feature:</b> You can Paste the Image or Screen Shot and get the Colors from that Image...</li>
             </div>
             {/* Button for OK */}
             <div className='text-center mt-4'>
