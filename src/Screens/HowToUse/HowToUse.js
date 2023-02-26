@@ -6,6 +6,8 @@ import Image2 from './upload-url.png'
 import Image3 from './picker-button.png'
 import Image4 from './picker-from-dialog.png'
 import Image5 from './colo.png'
+import Video1 from './PickiT-1.mp4'
+import Tumbnail from './tumbnail-pickiT.png'
 
 function HowToUse({ setHowtoUse }) {
     return (
@@ -28,6 +30,19 @@ function HowToUse({ setHowtoUse }) {
                 {/* Matter  */}
                 <div className='p-10'>
                     <span className='mb-5 block font-bold'>Note: Recommended for Desktop</span>
+
+                    {/* Video will go here... */}
+                    <div className='my-10'>
+                        <span className='mb-5 block text-lg font-bold'>Video Demo</span>
+                        <video
+                            controls
+                            poster={Tumbnail}
+                        >
+                            <source
+                                src={Video1} />
+                        </video>
+                    </div>
+
                     <ul className='list-disc'>
                         <li className='font-bold'>Step.1: Upload the Image OR Give a Image URL</li>
                         <div className='mt-2'>
