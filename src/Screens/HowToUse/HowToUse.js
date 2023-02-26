@@ -10,14 +10,14 @@ import Image5 from './colo.png'
 function HowToUse({ setHowtoUse }) {
     return (
         <div className='fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40 flex justify-center items-start'>
-            <div className='bg-white shadow-lg border-2 rounded-lg mt-5 p-5 w-1/2' style={{
+            <div className='bg-white shadow-lg border-2 rounded-lg mt-5 laptop:w-1/2 w-full' style={{
 
                 height: "95vh",
                 overflowY: "auto"
 
             }}>
                 {/* Heading with close button */}
-                <div className='flex justify-between items-center'>
+                <div className='flex justify-between items-center sticky top-0 bg-white p-5 border-b-2'>
                     <span className='text-xl font-bold'>How to Use?</span>
                     <div className='border w-8 h-8 rounded-lg text-3xl hover:bg-teal-700 hover:text-white cursor-pointer'
                         onClick={() => setHowtoUse(false)}
@@ -26,7 +26,8 @@ function HowToUse({ setHowtoUse }) {
                     </div>
                 </div>
                 {/* Matter  */}
-                <div className='px-5 py-10'>
+                <div className='p-10'>
+                    <span className='mb-5 block font-bold'>Note: Recommended for Desktop</span>
                     <ul className='list-disc'>
                         <li className='font-bold'>Step.1: Upload the Image OR Give a Image URL</li>
                         <div className='mt-2'>
