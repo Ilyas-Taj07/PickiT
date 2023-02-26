@@ -51,11 +51,11 @@ function MainPage() {
     }
 
     return (
-        <div className='flex w-full p-10 justify-evenly items-start'>
+        <div className='flex w-full laptop:p-10 p-5 laptop:flex-row flex-col justify-evenly items-start'>
             {
                 UploadedImage === '' ?
                     /* Image Uploaded.... */
-                    < div className='border-2 rounded-sm w-1/2 h-96 flex justify-center items-center shadow-md'>
+                    < div className='border-2 rounded-sm laptop:w-1/2 w-full h-96 flex justify-center items-center shadow-md'>
                         <input type={'file'} name='image' className='hidden' id='image-upload' onChange={handleUplaodedImage} />
                         <div className='text-center'>
                             <label
@@ -67,14 +67,7 @@ function MainPage() {
                     </div>
                     :
                     <div className='border-2 shadow-md select-none'>
-                        <div className='custom_image_display_panel'
-                            style={{
-                                width: "800px",
-                                height: "70vh",
-                                overflowX: "auto",
-                                overflowY: "auto"
-                            }}
-                        >
+                        <div className='custom_image_display_panel'>
                             <div style={{
                                 width: `${zoomOffSet}%`
                             }}>
@@ -106,12 +99,22 @@ function MainPage() {
                             >
                                 <MdRefresh />
                             </div>
+                            <div className='ml-4 laptop:hidden'>
+                                <label
+                                    htmlFor='pickit-color'
+                                    className='border w-10 h-10 flex justify-center items-center rounded-full cursor-pointer hover:bg-teal-700 hover:text-white'>
+                                    <MdColorize
+                                        className='text-3xl'
+                                    />
+                                </label>
+                            </div>
+
                         </div>
                     </div>
             }
 
             {/* Image Upload + Color Display.... */}
-            <div className='ml-8 border-2 px-10 w-1/3 shadow-md'>
+            <div className='laptop:ml-8 border-2 laptop:px-10 px-5 mt-5 laptop:mt-0 laptop:w-1/3 w-full shadow-md'>
                 {/* Image Upload */}
                 <label htmlFor='image-upload' className='cursor-pointer'>
                     <div className='my-5 border p-2 shadow-md flex items-center'>

@@ -13,7 +13,7 @@ function App() {
       <MainPage />
       {
         message && (
-          <div className='absolute bottom-5 left-1/4 border-2 shadow-2xl w-1/2 py-5 px-10 bg-white rounded-lg'>
+          <div className='fixed laptop:bottom-5 bottom-0 laptop:left-1/4 border-2 shadow-2xl laptop:w-1/2 w-full py-5 px-10 bg-white rounded-lg'>
             {/* Message */}
             <div>
               <li className='mb-2'>This Application Help you to get the <b>Color Hex Code</b> from an Image. It is an free web application which is made for Practice to help People.</li>
