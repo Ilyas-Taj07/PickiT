@@ -1,0 +1,17 @@
+.my-scroll {
+    background: #000;
+    height: 100vh;
+    overflow: auto;
+}
+
+.my-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.my-scroll::-webkit-scrollbar-thumb {
+    background: #7c7c7c;
+}
+
+.my-scroll::-webkit-scrollbar-track {
+    background: #c7c7c7;
+}

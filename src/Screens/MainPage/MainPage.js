@@ -8,9 +8,6 @@ function MainPage() {
 
     const [imgURL, setIMGURL] = useState('')
 
-    const [secretPopup, setSecretPopup] = useState(false)
-    const [secretImg, setSecretImg] = useState('')
-
     const handleChangeColor = (e) => {
 
         setCOLOR(e.target.value)
@@ -31,7 +28,7 @@ function MainPage() {
 
     }
 
-    const [zoomOffSet, setZoomOffSet] = useState(100)
+    const [zoomOffSet, setZoomOffSet] = useState(70)
 
     const handleOffSet = (type) => {
         if (type === "ZOOMIN") {
@@ -54,7 +51,6 @@ function MainPage() {
         e.target.img_url.value = ''
 
     }
-
 
     const handleGetImage = (e) => {
 
@@ -92,14 +88,6 @@ function MainPage() {
         navigator.clipboard.writeText(UploadedImage)
     }
 
-    const handleSecretPOUP = (e) => {
-        if (e.target.value === 'Convert Images s-007') {
-            setSecretPopup(true)
-            setSecretImg('')
-        }
-        setSecretImg(e.target.value)
-    }
-
     return (
         <div className='flex w-full laptop:p-10 p-5 laptop:flex-row flex-col justify-evenly items-start'>
             {
@@ -110,26 +98,26 @@ function MainPage() {
                         <div className='text-center'>
                             <label
                                 htmlFor='image-upload'
-                                className='bg-teal-600 hover:bg-teal-700 px-6 py-3 text-white rounded-lg cursor-pointer'
+                                className='bg-white text-black hover:bg-white hover:text-black px-6 py-3 rounded-lg cursor-pointer'
                             >Upload</label>
-                            <p className='mt-3'>Please Upload the Image here....</p>
+                            <p className='mt-10 text-white'>Please Upload the Image here....</p>
                         </div>
                     </div>
                     :
                     <div className='w-1/2'>
                         {/* Image Display */}
-                        <div className='border-2 shadow-md select-none'>
+                        <div className='border-2 shadow-md select-none bg-black overflow-auto'>
                             <div className='custom_image_display_panel'>
                                 <div style={{
                                     width: `${zoomOffSet}%`
-                                }}>
+                                }} className='this-image-class-name'>
                                     <img src={UploadedImage} alt='uploaded_image' />
                                 </div>
                             </div>
                             {/* Zoom Option */}
-                            <div className='flex px-10 py-4 border-2 text-3xl items-center'>
+                            <div className='flex flex-col px-2  gap-3 py-4 border-2 text-3xl items-center bg-white absolute top-32 right-0'>
                                 <div
-                                    className='border w-10 h-10 flex justify-center items-center rounded-full hover:bg-teal-700 hover:text-white cursor-pointer'
+                                    className='border w-10 h-10 flex justify-center items-center rounded-full hover:bg-black hover:text-white cursor-pointer'
                                     onClick={() => handleOffSet('ZOOMIN')}
                                 >
                                     <MdZoomIn />
@@ -138,13 +126,13 @@ function MainPage() {
                                     {zoomOffSet}%
                                 </div>
                                 <div
-                                    className='border w-10 h-10 flex justify-center items-center rounded-full hover:bg-teal-700 hover:text-white cursor-pointer ml-5'
+                                    className='border w-10 h-10 flex justify-center items-center rounded-full hover:bg-black hover:text-white cursor-pointer ml-5'
                                     onClick={() => handleOffSet('ZOOMOUT')}
                                 >
                                     <MdZoomOut />
                                 </div>
                                 <div
-                                    className='border w-10 h-10 flex justify-center items-center rounded-full hover:bg-teal-700 hover:text-white cursor-pointer ml-5'
+                                    className='border w-10 h-10 flex justify-center items-center rounded-full hover:bg-black hover:text-white cursor-pointer ml-5'
                                     onClick={() => {
                                         setUploadedImage('')
                                     }}
@@ -164,19 +152,15 @@ function MainPage() {
                             </div>
                         </div>
                         {/* Base 64 Code */}
-                        {
-                            secretPopup && (
-                                <div className='border-2 shadow-md w-full mt-5 rounded-md h-96 overflow-auto'>
-                                    <div className='border-2 shadow-sm w-full h-12 px-5 py-2 flex justify-between sticky top-0 bg-white'>
-                                        <h2 className='font-bold'>Base64 Code Generator</h2>
-                                        <MdFileCopy className='text-2xl cursor-pointer' onClick={handleCopyBase64Code} />
-                                    </div>
-                                    <div className='px-5 py-10 break-words'>
-                                        <p>{UploadedImage}</p>
-                                    </div>
-                                </div>
-                            )
-                        }
+                        <div className='border-2 shadow-md w-full mt-5 rounded-md h-96 overflow-auto'>
+                            <div className='border-2 shadow-sm w-full h-12 px-5 py-2 flex justify-between sticky top-0 bg-white'>
+                                <h2 className='font-bold'>Base64 Code</h2>
+                                <MdFileCopy className='text-2xl cursor-pointer' onClick={handleCopyBase64Code} />
+                            </div>
+                            <div className='px-5 py-10 break-words text-white'>
+                                <p>{UploadedImage}</p>
+                            </div>
+                        </div>
                     </div>
             }
 
@@ -186,7 +170,7 @@ function MainPage() {
                     UploadedImage === '' ?
                         <>
                             {/* Image Upload */}
-                            <label htmlFor='image-upload' className='cursor-pointer'>
+                            {/* <label htmlFor='image-upload' className='cursor-pointer'>
                                 <div className='my-5 border p-2 shadow-md flex items-center'>
                                     <label
                                         htmlFor='image-upload'
@@ -194,13 +178,13 @@ function MainPage() {
                                     >Upload</label>
                                     <p className='ml-3'>{UploadedImage === '' ? "Upload Image..." : "Uploaded Successfully..."}</p>
                                 </div>
-                            </label>
+                            </label> */}
 
-                            <form className='border-2 shadow-md px-2 py-2 rounded-md' onSubmit={handleForm} autoComplete='off'>
-                                <label className='font-bold'>Upload Image URL</label>
+                            <form className='border-2 shadow-md px-2 py-2 rounded-md mt-5' onSubmit={handleForm} autoComplete='off'>
+                                <label className='font-bold text-white'>Upload Image URL</label>
                                 <input
                                     type={'text'}
-                                    className='border-2 rounded-md w-full mt-2 h-10 shadow-md pl-2 focus:border-teal-700 focus:outline-none'
+                                    className='border-2 rounded-md w-full mt-2 h-12 shadow-md pl-2 bg-black text-white focus:border-white focus:outline-none'
                                     placeholder='Enter an Image URL'
                                     name='img_url'
                                     value={imgURL}
@@ -208,14 +192,14 @@ function MainPage() {
                                 />
                                 <input
                                     type={'submit'}
-                                    className='mt-3 border w-28 h-10 hover:bg-teal-700 hover:text-white rounded-lg cursor-pointer'
+                                    className='mt-3 border w-28 h-10 hover:bg-white hover:text-black bg-white rounded-lg cursor-pointer'
                                 />
                             </form>
 
                             <div
                                 className='mt-3 p-2 border-2 shadow-lg rounded-md'
                             >
-                                <label className='font-bold'>Paste the Image</label>
+                                <label className='font-bold text-white'>Paste the Image</label>
                                 <input
                                     contentEditable={true}
                                     className='border-2 rounded-md w-full mt-2 h-10 shadow-md pl-2 focus:border-teal-700 focus:outline-none'
@@ -226,7 +210,6 @@ function MainPage() {
                         :
                         <></>
                 }
-                <input className='mt-3 w-full h-10 px-2' value={secretImg} onChange={handleSecretPOUP} />
                 {/* Image Color display */}
                 <div className='shadow-md my-10 px-2 py-5 border-2 rounded-md flex relative'>
                     {/* Color Picker */}
@@ -241,7 +224,7 @@ function MainPage() {
                         />
                         <label
                             htmlFor='pickit-color'
-                            className='w-10 h-10 flex justify-center items-center rounded-full cursor-pointer hover:bg-teal-700 hover:text-white'>
+                            className='w-10 h-10 flex justify-center items-center rounded-full cursor-pointer bg-white hover:bg-black hover:text-white'>
                             <MdColorize
                                 className='text-3xl'
                             />
@@ -256,11 +239,10 @@ function MainPage() {
                             }}
                         ></div>
                         {/* Current Color */}
-                        <div className='mt-4 text-center shadow-lg py-3'>{COLOR}</div>
+                        <div className='mt-4 text-center shadow-lg py-3 bg-white'>{COLOR}</div>
                     </div>
                 </div>
             </div>
-
         </div >
     )
 }

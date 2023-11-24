@@ -8,7 +8,7 @@ function App() {
   const [message, setMessage] = useState(true)
 
   return (
-    <>
+    <div className='my-scroll'>
       <Header />
       <MainPage />
       {
@@ -31,7 +31,7 @@ function App() {
           </div>
         )
       }
-    </>
+    </div>
   );
 }
 
