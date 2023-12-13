@@ -1,0 +1,37 @@
+.header--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+.header--title span {
+    color: #fff;
+    font-size: 38px;
+    letter-spacing: 8px;
+    font-weight: 600;
+}
+
+.header--navigations {
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.header--navigations a {
+    color: #fff;
+    display: block;
+    padding: 5px 20px;
+}
+
+.header--navigations a:hover {
+    scale: 1.1;
+}
+
+.header--navigations .active {
+    background: #fff;
+    color: #000;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}

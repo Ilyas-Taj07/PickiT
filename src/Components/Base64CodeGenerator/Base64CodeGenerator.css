@@ -1,0 +1,115 @@
+.base64--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.base64--uploader {
+    width: 600px;
+    background: #fff;
+    padding-bottom: 50px;
+}
+
+.base64--uploader-span-1 {
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.base64--uploader-span-1 label {
+    background: #0c435b;
+    padding: 10px 25px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.base64--uploader-span-1 label:hover {
+    scale: 1.1;
+}
+
+.base64--uploader-span-1 p {
+    margin-top: 10px;
+}
+
+.--base64--center {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.base64--uploader-span-2,
+.base64--uploader-span-3 {
+    width: 70%;
+    margin: auto;
+}
+
+
+.base64--uploader-span-2 input,
+.base64--uploader-span-3 input {
+    width: 100%;
+    margin-top: 5px;
+    height: 35px;
+    background: #c8c8c8;
+    color: #000;
+    padding-left: 15px;
+    border: none;
+    outline: none;
+}
+
+
+.base64--viewer {
+    width: 600px;
+    background: #fff;
+    padding: 10px;
+}
+
+
+
+.base64--copy {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.base64--copy button {
+    padding: 5px 20px;
+    background: #0c435b;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.base64--image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.base64--image img {
+    width: 60%;
+}
+
+.base64--code {
+    width: 80%;
+    margin: auto;
+    height: 20vh;
+    overflow: auto;
+    margin-top: 30px;
+}
+
+.base64--code p {
+    word-wrap: break-word;
+}
+
+.base64--copy button:hover {
+    scale: 1.1;
+}
+
+.base64--copy button:active {
+    scale: 0.8;
+}

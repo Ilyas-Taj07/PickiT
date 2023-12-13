@@ -1,0 +1,131 @@
+.color-picker--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.color-picker--uploader {
+    width: 600px;
+    background: #fff;
+    padding-bottom: 50px;
+}
+
+.color-picker--uploader-span-1 {
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.color-picker--uploader-span-1 label {
+    background: #0c435b;
+    padding: 10px 25px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.color-picker--uploader-span-1 label:hover {
+    scale: 1.1;
+}
+
+.color-picker--uploader-span-1 p {
+    margin-top: 10px;
+}
+
+.--color-picker--center {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.color-picker--uploader-span-2,
+.color-picker--uploader-span-3 {
+    width: 70%;
+    margin: auto;
+}
+
+
+.color-picker--uploader-span-2 input,
+.color-picker--uploader-span-3 input {
+    width: 100%;
+    margin-top: 5px;
+    height: 35px;
+    background: #c8c8c8;
+    color: #000;
+    padding-left: 15px;
+    border: none;
+    outline: none;
+}
+
+
+.color--pikcer--viewer {
+    width: 700px;
+    height: 70vh;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.color--pikcer--viewer .color--pikcer--viewer--image {
+    width: 90%;
+    height: 90%;
+    overflow: auto;
+    border: 1px solid #0c435b;
+}
+
+.color--pikcer--viewer--image img {
+    width: 100%;
+}
+
+.color--picker {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px 60px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.color--picker button {
+    padding: 5px 10px;
+    background: #fff;
+    color: #0c435b;
+    border-radius: 3px;
+}
+
+.color--picker button:hover {
+    scale: 1.1;
+}
+
+.color--picker button:active {
+    scale: 0.8;
+}
+
+.color--picker-hex {
+    position: fixed;
+    top: 50%;
+    right: 2%;
+    background: #fff;
+    width: 200px;
+    height: 100px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.4);
+    padding: 10px;
+}
+
+.color--picker--div {
+    border: 1px solid #000;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.color--picker-hex p {
+    text-align: center;
+    margin-top: 5px;
+}

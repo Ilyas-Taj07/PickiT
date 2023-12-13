@@ -1,5 +1,16 @@
-.my-scroll {
-    background: #000;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Rethink+Sans:ital@1&family=Roboto&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Rethink Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    background-image: url('./assets/bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     height: 100vh;
     overflow: auto;
 }
@@ -9,9 +20,9 @@
 }
 
 .my-scroll::-webkit-scrollbar-thumb {
-    background: #7c7c7c;
+    background: #082d3d;
 }
 
 .my-scroll::-webkit-scrollbar-track {
-    background: #c7c7c7;
+    background: #fff;
 }
