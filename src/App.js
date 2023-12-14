@@ -5,6 +5,7 @@ import Header from './Components/Header';
 import ColorPicker from './Components/ColorPicker';
 import Base64CodeGenerator from './Components/Base64CodeGenerator';
 import TextExtraction from './Components/TextExtraction';
+import YoutubeWatching from './Components/YoutubeWatching';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path='/code-generator' element={<Base64CodeGenerator />} />
           <Route path='/text-extraction' element={<TextExtraction />} />
         </Route>
+        <Route path='/yt' element={<YoutubeWatching />} />
       </Routes>
       {
         message && (

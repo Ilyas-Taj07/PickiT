@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import "./ColorPicker.css"
+import { useNavigate } from 'react-router-dom'
 
 function ColorPicker() {
 
     const [UploadedImage, setUploadedImage] = useState(null)
     const [hexCode, setHexCode] = useState(null)
+
+    const navigate = useNavigate()
 
     const handleUplaodedImage = (e) => {
 
@@ -23,8 +26,6 @@ function ColorPicker() {
     }
 
     const handleGetImage = (e) => {
-
-        e.preventDefault()
 
         const items = e.clipboardData.items;
 
@@ -101,6 +102,12 @@ function ColorPicker() {
                                 contentEditable={true}
                                 placeholder='Enter here...'
                                 onPaste={handleGetImage}
+                                onChange={(e) => {
+                                    console.log(e.target.value)
+                                    if (e.target.value === 'youtube watching') {
+                                        navigate('/yt')
+                                    }
+                                }}
                             />
                         </div>
                     </div>

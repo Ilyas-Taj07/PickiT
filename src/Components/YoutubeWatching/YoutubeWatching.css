@@ -1,0 +1,78 @@
+.youtube-watching--container {
+    width: 90%;
+    margin: auto;
+    margin-top: 60px;
+}
+
+.youtube-watching--fields {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.youtube-watching--fields input:first-child {
+    width: 500px;
+    height: 40px;
+    background: #fff;
+    color: #000;
+    padding-left: 15px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.youtube-watching--fields .youtube-watching--numbers {
+    width: 50px;
+    height: 40px;
+    background: #fff;
+    color: #000;
+    border: none;
+    outline: none;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.youtube-watching--fields button {
+    background: #fff;
+    color: #0c435b;
+    border-radius: 3px;
+    font-size: 18px;
+    user-select: none;
+    width: 100px;
+    height: 40px;
+}
+
+.youtube-watching--fields button:hover {
+    scale: 1.05;
+}
+
+.youtube-watching--fields button:active {
+    scale: 0.8;
+}
+
+.youtube-watching--content {
+    background: #fff;
+    margin-top: 50px;
+    height: 60vh;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.youtube-watching--content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.youtube-watching--content::-webkit-scrollbar-thumb {
+    background: #082d3d;
+    border-radius: 5px;
+}
+
+.youtube-watching--content::-webkit-scrollbar-track {
+    background: #c8c8c8;
+}
