@@ -48,7 +48,7 @@ function YoutubeWatching() {
                         :
                         <iframe
                             width="600px"
-                            height="150px"
+                            height="200px"
                             src={embedURl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
                 }
@@ -63,7 +63,7 @@ function YoutubeWatching() {
                                         <iframe
                                             key={index}
                                             width="15%"
-                                            height="150px"
+                                            height={'35%'}
                                             src={item.url}
                                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             allowfullscreen></iframe>

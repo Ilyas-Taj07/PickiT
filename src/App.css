@@ -4,26 +4,29 @@
     font-family: 'Open Sans', sans-serif;
     font-family: 'Rethink Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.container {
+.container-- {
+    height: 100vh;
     background-image: url('./assets/bg.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
     overflow: auto;
-    width: 100%;
 }
 
-.my-scroll::-webkit-scrollbar {
-    width: 5px;
+.container--::-webkit-scrollbar {
+    width: 10px;
 }
 
-.my-scroll::-webkit-scrollbar-thumb {
+.container--::-webkit-scrollbar-thumb {
     background: #082d3d;
+    border-radius: 50px;
 }
 
-.my-scroll::-webkit-scrollbar-track {
+.container--::-webkit-scrollbar-track {
     background: #fff;
 }
