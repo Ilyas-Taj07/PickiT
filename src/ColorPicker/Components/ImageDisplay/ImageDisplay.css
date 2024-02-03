@@ -1,0 +1,44 @@
+.image-display--container {
+    width: 800px;
+    height: 500px;
+    overflow: auto;
+    user-select: none;
+    box-shadow: 0 0 10px 12px rgba(142, 71, 57, 0.1);
+}
+
+.image-display--zoom {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    box-shadow: 0 0 10px 12px rgba(142, 71, 57, 0.1);
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.image-display--zoom-out {
+    margin-top: 10px;
+}
+
+.image-display--zoom-in,
+.image-display--zoom-out {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #8E4739;
+    cursor: pointer;
+}
+
+.image-display--zoom-in svg,
+.image-display--zoom-out svg {
+    background: transparent;
+    scale: 1.2;
+    color: #DDD2C6;
+}
+
+
+.image-display--zoom-in:active,
+.image-display--zoom-out:active {
+    scale: 0.9;
+}

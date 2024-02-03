@@ -1,32 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Rethink+Sans:ital@1&family=Roboto&display=swap');
-
-* {
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Rethink Sans', sans-serif;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.app--layout {
+    display: flex;
 }
 
-.container-- {
+/* navigations */
+
+.navigation--container {
+    width: 250px;
     height: 100vh;
-    background-image: url('./assets/bg.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    overflow: auto;
+    border-right: 2px solid #8E4739;
+    position: relative;
 }
 
-.container--::-webkit-scrollbar {
-    width: 10px;
+.navigation--logo {
+    width: 100%;
+    padding: 50px;
 }
 
-.container--::-webkit-scrollbar-thumb {
-    background: #082d3d;
-    border-radius: 50px;
+.navigation--logo img {
+    width: 100%;
 }
 
-.container--::-webkit-scrollbar-track {
-    background: #fff;
+.navigation--content {
+    padding: 0 10px;
+}
+
+.navigation--content a {
+    display: block;
+    padding: 20px;
+    font-size: 17px;
+    text-decoration: none;
+    color: #8E4739;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.navigation--content .active,
+.navigation--content a:hover {
+    background: #8E4739;
+    color: #DDD2C3;
+}
+
+.navigation--yt--icon {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.navigation--yt--icon span {
+    font-size: 14px;
+    color: #8e8e8e;
+}
+
+.navigation--yt--icon a {
+    display: block;
+    text-decoration: none;
+    font-size: 28px;
+    color: #8E4739;
+}
+
+.contact-us {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+
+.contact-us img {
+    width: 40px;
+    height: 40px;
+}
+
+.contact-us img:hover {
+    scale: 1.1;
 }

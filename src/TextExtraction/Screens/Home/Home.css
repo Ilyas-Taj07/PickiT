@@ -1,0 +1,11 @@
+.text-extraction-home--container {
+    height: 100vh;
+    flex: 1;
+    display: grid;
+    place-items: center;
+}
+
+.text-extraction-home--container p {
+    font-size: 80px;
+    color: #8E4739;
+}

@@ -1,0 +1,39 @@
+.uploader--card {
+    width: 600px;
+    box-shadow: 0 0 10px 12px rgba(142, 71, 57, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.uploader--field input {
+    width: 100%;
+    margin-top: 10px;
+    height: 40px;
+    padding-left: 15px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    border: 0.5px solid #8E4739;
+}
+
+.uploader--upload {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    width: 200px;
+    text-align: center;
+    gap: 20px;
+    user-select: none;
+}
+
+.uploader--upload label:first-child {
+    display: block;
+    padding: 10px 30px;
+    background: #8E4739;
+    width: 100%;
+    color: #DDD2C6;
+    cursor: pointer;
+    border-radius: 3px;
+}
